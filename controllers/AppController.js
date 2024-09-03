@@ -1,5 +1,3 @@
-const redis = require('../utils/redis');
-const db = require('../utils/db');
 const redisClient = require('../utils/redis');
 const dbClient = require('../utils/db');
 

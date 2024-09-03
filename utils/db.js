@@ -37,6 +37,19 @@ class DBClient {
     const documentNo = await collection.countDocuments();
     return documentNo;
   }
+
+  async findUserByEmail(email) {
+    const query = {email: email};
+    const collection = this.db.collection('users');
+    const user = await collection.findOne(query);
+    return user;
+  }
+
+  async addUser(email, password) {
+    const query = {email: email, password: password};
+    const collection = this.db.collection('users');
+    const insertResult = await collection.insert(query);
+  }
 }
 
 const dbClient = new DBClient();
